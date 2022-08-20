@@ -14,7 +14,9 @@
   "private": true,
   "scripts": {
     "test": "apm test",
-    "lint": "(flow check) && (eslint . ) && (prettier --list-different lib/*.js)"
+    "lint": "(flow check) && (eslint . ) && (prettier --list-different lib/*.js)",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "engines": {
     "atom": ">=1.14.0 <2.0.0"
@@ -42,7 +44,8 @@
     "atom-package-deps": "^5.1.0",
     "atom-select-list": "^0.7.2",
     "lodash": "^4.17.15",
-    "minimatch": "^3.0.3"
+    "minimatch": "^3.0.3",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "eslint-config-steelbrain": "^7.0.0",
@@ -96,5 +99,6 @@
       "default": [],
       "order": 6
     }
-  }
+  },
+  "snyk": true
 }
