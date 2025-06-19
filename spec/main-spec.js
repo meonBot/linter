@@ -1,19 +1,20 @@
 /* @flow */
+/* eslint-disable no-empty-function */
 
-import AtomLinter from '../lib/main'
+import AtomLinter from '../dist/main'
 import { getMessage } from './common'
 
-describe('Atom Linter', function() {
+describe('Atom Linter', function () {
   let atomLinter
 
-  beforeEach(function() {
+  beforeEach(function () {
     atomLinter = new AtomLinter()
   })
-  afterEach(function() {
+  afterEach(function () {
     atomLinter.dispose()
   })
 
-  it('feeds old messages to newly added ui providers', function() {
+  it('feeds old messages to newly added ui providers', function () {
     let patchCalled = 0
 
     const message = getMessage(true)
@@ -29,7 +30,7 @@ describe('Atom Linter', function() {
       },
       dispose() {},
     }
-    // Force the MessageRegistry to initialze, note that this is handled under
+    // Force the MessageRegistry to initialize, note that this is handled under
     // normal usage!
     atomLinter.registryMessagesInit()
     atomLinter.registryMessages.messages.push(message)

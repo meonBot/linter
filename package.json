@@ -1,9 +1,9 @@
 {
   "name": "linter",
-  "main": "./lib/index.js",
+  "main": "./dist/index.js",
   "author": "steelbrain",
   "readme": "./README.md",
-  "version": "2.3.1",
+  "version": "3.4.0",
   "description": "A Base Linter with Cow Powers",
   "repository": "https://github.com/steelbrain/linter",
   "license": "MIT",
@@ -13,8 +13,7 @@
   ],
   "private": true,
   "scripts": {
-    "test": "apm test",
-    "lint": "(flow check) && (eslint . ) && (prettier --list-different lib/*.js)"
+
   },
   "engines": {
     "atom": ">=1.14.0 <2.0.0"
@@ -38,19 +37,20 @@
       }
     }
   },
+  "activationHooks": [
+    "core:loaded-shell-environment"
+  ],
   "dependencies": {
-    "atom-package-deps": "^5.1.0",
-    "atom-select-list": "^0.7.2",
-    "lodash": "^4.17.15",
-    "minimatch": "^3.0.3"
+
   },
   "devDependencies": {
-    "eslint-config-steelbrain": "^7.0.0",
-    "flow-bin": "^0.183.1",
-    "jasmine-fix": "^1.3.1"
+
   },
   "package-deps": [
-    "linter-ui-default"
+    {
+      "name": "linter-ui-default",
+      "minimumVersion": "3.3.1"
+    }
   ],
   "configSchema": {
     "lintPreviewTabs": {
@@ -96,5 +96,6 @@
       "default": [],
       "order": 6
     }
-  }
+  },
+  "snyk": true
 }
