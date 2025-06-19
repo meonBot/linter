@@ -57,6 +57,7 @@
     "core:loaded-shell-environment"
   ],
   "dependencies": {
+
   },
   "devDependencies": {
     "@types/atom": "^1.40.10",
